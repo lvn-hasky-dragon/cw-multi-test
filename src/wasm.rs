@@ -827,7 +827,7 @@ where
                 let reply = Reply {
                     id,
                     payload: Default::default(),
-                    gas_used: 0,
+                    gas_used: Some(0),
                     result: SubMsgResult::Ok(
                         #[allow(deprecated)]
                         SubMsgResponse {
@@ -853,7 +853,7 @@ where
                 let reply = Reply {
                     id,
                     payload: Default::default(),
-                    gas_used: 0,
+                    gas_used: Some(0),
                     result: SubMsgResult::Err(format!("{:?}", e)),
                 };
                 self.reply(api, router, storage, block, contract, reply)
